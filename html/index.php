@@ -1,15 +1,14 @@
 <?php
-    $banco = "pagplay";
-    $usuario = "root";
-    $senha = "MySql2019!";
-    $hostname = "mysqlsrv";
-    $conn = mysqli_connect($hostname,$usuario,$senha); 
-    mysqli_select_db($conn,$banco) or die( "Não foi possível conectar ao banco MySQL");
-    if (!$conn) { 
-        echo "Não foi possível conectar ao banco MySQL.<br>"; 
-        exit;
-    }else {
-        echo "Parabéns!! A conexão ao banco de dados ocorreu normalmente!.<br>";
+  if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
+    if (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] === 'ON') {
+      $_SERVER['SERVER_PORT'] = 443;
     }
-    mysqli_close($conn);
+    else {
+      $_SERVER['SERVER_PORT'] = 80;
+    }
+  }
+
+  echo "Listening in address: ";
+  echo $_SERVER['SERVER_PORT'];
+  
 ?>

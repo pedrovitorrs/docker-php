@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  webapp:
+    build:
+      args:
+        user: apache-www
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    container_name: contadigital_api
+    working_dir: /var/www/html
+    environment:
+      - APP_ENV=development
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./apache2/log:/var/log/apache2
+    sysctls :
+      net.ipv4.ip_unprivileged_port_start : ' 0 '  # Allow non-root user to bind to port 80 
+    networks:
+      - backendapi-network
+
+networks: 
+  backendapi-network:
+    driver: bridge

@@ -1,0 +1,6 @@
+<?php
+
+# Teste
+echo "oi"
+
+?>

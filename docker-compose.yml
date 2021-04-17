@@ -13,12 +13,31 @@ services:
     environment:
       - APP_ENV=development
     ports:
-      - "80:80"
+      - 80:80
     volumes:
       - ./html:/var/www/html
       - ./apache2/log:/var/log/apache2
     sysctls :
       net.ipv4.ip_unprivileged_port_start : ' 0 '  # Allow non-root user to bind to port 80 
+    networks:
+      - backendapi-network
+  
+  mysqlsrv:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "MySql2019!"
+      MYSQL_DATABASE: "testedb"
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/volumes:/var/lib/mysql
+    networks:
+      - backendapi-network
+  
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
     networks:
       - backendapi-network
 

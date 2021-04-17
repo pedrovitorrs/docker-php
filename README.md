@@ -5,7 +5,9 @@ This is an Docker based local development environment PHP 7.4, Apache and MySql
 
 ### Features
 
-- [x] Dockerizing PHP and Apache server
+- [x] Dockerizing: 
+    - [x] PHP and Apache server
+    - [x] Adminer and MySql
 
 ## How to Install
 

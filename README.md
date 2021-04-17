@@ -14,6 +14,7 @@ This is an Docker based local development environment PHP 7.4, Apache and MySql
 ```
  git clone https://github.com/pedrovitorrs/dev_DockPhp.git
  cd dev_DockPhp
+ mkdir -p mysql/volumes/
 ```
 
 * Install the dependencies and start the project:

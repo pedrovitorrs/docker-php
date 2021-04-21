@@ -1,4 +1,4 @@
-# dev_DockPhp
+# docker-php
 ## About the project
 
 This is an Docker based local development environment PHP 7.4, Apache and MySql 

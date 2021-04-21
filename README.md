@@ -14,8 +14,8 @@ This is an Docker based local development environment PHP 7.4, Apache and MySql
 * To download the project follow the instructions bellow:
 
 ```
- git clone https://github.com/pedrovitorrs/dev_DockPhp.git
- cd dev_DockPhp
+ git clone https://github.com/pedrovitorrs/docker-php.git
+ cd docker-php
  mkdir -p mysql/volumes/
 ```
 
